@@ -15,12 +15,12 @@ var norm = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?
     tileSize: 512,
     zoomOffset: -1,
     accessToken: 'pk.eyJ1IjoiaGFydmFyZG1hcHMiLCJhIjoiY2tkMG91YjBvMGQ3YjJxcDB2a3l2M3lvOCJ9.PDmYUq9MgJwq3JlWAlg3wA'
-});
+}).addTo(mymap);
 controlLayers.addBaseLayer(norm, 'OSM basemap');
 
 var light = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
-}).addTo(mymap);
+});
 controlLayers.addBaseLayer(light, 'Carto Light basemap');
 
 var terrain = L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.png', {

@@ -30,6 +30,7 @@ var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/w
 	ext: 'jpg'
 });
 
+/*
 controlLayers.addBaseLayer(Stamen_Watercolor, 'Stamen Watercolor basemap');
 
 var Sanborn_1867 = L.tileLayer(
@@ -41,3 +42,4 @@ var Sanborn_1867 = L.tileLayer(
 
 controlLayers.addBaseLayer(Sanborn_1867, '1867 Sanborn');
 
+*/

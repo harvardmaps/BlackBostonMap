@@ -33,3 +33,14 @@ var mymap = L.map('map', {
   ).addTo(mymap);
   
   controlLayers.addBaseLayer(Sanborn_1867, '1867 Sanborn');
+
+  var Beers_1874 = L.tileLayer(
+	'https://s3.us-east-2.wasabisys.com/urbanatlases/39999059015410/tiles/{z}/{x}/{-y}.png', {
+		tms: true, 
+		attribution: 'Leventhal Map & Education Center'
+	}
+);
+
+controlLayers.addBaseLayer(Beers_1874, '1874 F.W. Beers & Co');
+
+  

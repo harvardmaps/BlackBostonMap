@@ -32,3 +32,12 @@ var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/w
 
 controlLayers.addBaseLayer(Stamen_Watercolor, 'Stamen Watercolor basemap');
 
+var Sanborn_1867 = L.tileLayer(
+    'https://s3.us-east-2.wasabisys.com/urbanatlases/39999059012052/tiles/{z}/{x}/{-y}.png', {
+        tms: true, 
+        attribution: 'Leventhal Map & Education Center'
+    }
+);
+
+controlLayers.addBaseLayer(Sanborn_1867, '1867 Sanborn');
+

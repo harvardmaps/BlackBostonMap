@@ -50,4 +50,5 @@ var popup = L.popup()
  	.setContent('<p>Hello world!<br />This is a nice popup.</p>')
   .addTo(mymap);
 
-  mymap.addBaseLayer(popup, 'popup');
+mymap.addBaseLayer(popup);
+controlLayers.addBaseLayer(popup, 'popup');

@@ -48,5 +48,6 @@ var latlng = (42.3554, -71.0762)
 var popup = L.popup()
  	.setLatLng(latlng)
  	.setContent('<p>Hello world!<br />This is a nice popup.</p>')
- 	.addTo(mymap);
-  
+  .addTo(mymap);
+
+  mymap.addBaseLayer(popup, 'popup');

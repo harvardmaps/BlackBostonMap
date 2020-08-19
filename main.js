@@ -43,12 +43,11 @@ var mymap = L.map('map', {
 
 controlLayers.addBaseLayer(Beers_1874, '1874 F.W. Beers & Co');
 
+/*
 var latlng = (42.3554, -71.0762)
 
 var popup = L.popup()
  	.setLatLng(latlng)
  	.setContent('<p>Hello world!<br />This is a nice popup.</p>')
   .addTo(mymap);
-
-mymap.addBaseLayer(popup);
-controlLayers.addBaseLayer(popup, 'popup');
+*/

@@ -110,6 +110,6 @@ function onEachFeature(feature, layer) {
     });
 };
 
-L.geoJson(geodata {
+L.geoJson(geodata, {
     onEachFeature: onEachFeature
 }).addTo(mymap); 

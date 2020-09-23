@@ -84,11 +84,11 @@ var geodata =  {
 L.geoJson(geodata).addTo(mymap);
 
 function removeFeatures() {
-	$( "#sidebar-content" ).replaceWith("<div id = "sidebar-content"> <h2>Sidebar for popup content</h2> <p>One idea is to populate the data from the popups over here</p></div>");
+	$( "#sidebar-content" ).html("<h2>Sidebar for popup content</h2> <p>One idea is to populate the data from the popups over here</p>");
 };
 
 function addFeature() {
-	$( "#sidebar-content" ).replaceWith("<div id = "sidebar-content"> <h2>Updated sidebar for popup content</h2><br><strong>Name: </strong><<br><strong>Address: </strong></div>");
+	$( "#sidebar-content" ).html("<h2>Updated sidebar for popup content</h2><br><strong>Name: </strong><<br><strong>Address: </strong>");
 };
 
 $( "#addButton1" ).click(function() {

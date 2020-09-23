@@ -82,3 +82,40 @@ var geodata =  {
   };
   
 L.geoJson(geodata).addTo(mymap);
+
+function removeFeatures() {
+	$( "#sidebar-content" ).replaceWith("<h2>Sidebar for popup content</h2> <p>One idea is to populate the data from the popups over here</p> <li>Data data data</li> <li>Data data data</li> <li>Data data data</li>");
+};
+
+function addFeature() {
+	$( "#sidebar-content" ).replaceWith("<h2>Updated sidebar for popup content</h2><br><strong>Name: </strong></br><br><strong>Address: </strong></br>");
+};
+
+$( "#addButton1" ).click(function() {
+	addFeature();
+});
+
+// Use $( "elementID") and the jQuery click listener method to remove on the remove button
+$( "#removeButton" ).click(function() {
+	removeFeatures();
+});
+
+
+/* function whenClicked(e) {
+  // e = event
+  console.log(e);
+  // You can make your ajax call declaration here
+  //$.ajax(... 
+}
+
+function onEachFeature(feature, layer) {
+    //bind click
+    layer.on({
+        click: whenClicked
+    });
+}
+
+geojson = L.geoJson(your_data, {
+    style: style,
+    onEachFeature: onEachFeature
+}).addTo(map); */

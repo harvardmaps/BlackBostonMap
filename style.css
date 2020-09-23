@@ -27,3 +27,8 @@ body {
   background-color: #FFFAFA;
   z-index: 999999;
 }
+
+#sidebar-content{
+  margin-left: 5%;
+  margin-right: 5%;
+}

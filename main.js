@@ -79,8 +79,9 @@ var geodata =  {
 	  }
 	 }
 	]
-  };
+};
 
+L.geoJson(geodata).addTo(mymap);
 
 function removeFeatures() {
 	$( "#sidebar-content" ).html("<h2>Introduction to the site</h2> <p>Some ideas here</p>");
@@ -96,7 +97,7 @@ function addFeature() {
 $( "#reset-button" ).click(function() {
 	removeFeatures();
 });
-
+/*
 function whenClicked(e) {
   // e = event
   var feature = e.target;
@@ -112,4 +113,4 @@ function onEachFeature(feature, layer) {
 
 L.geoJson(geodata, {
     onEachFeature: onEachFeature
-}).addTo(mymap); 
+}).addTo(mymap); */

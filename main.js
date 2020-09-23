@@ -100,7 +100,7 @@ $( "#reset-button" ).click(function() {
 function whenClicked(e) {
   // e = event
   var feature = e.target;
-  $( "#sidebar-content" ).html("<h2>Updated sidebar for popup content</h2><br><strong>Name: " + feature.feature.properties.NAME_2 + " " + feature.feature.properties.NAME_1 + "</strong><br><strong>Address: " + feature.feature.properties.ORIG_ADDRESS + "</strong>");
+  $( "#sidebar-content" ).html("<h2>Updated sidebar for popup content</h2><br><strong>Name: " + feature.properties.NAME_2 + " " + feature.properties.NAME_1 + "</strong><br><strong>Address: " + feature.feature.properties.ORIG_ADDRESS + "</strong>");
 };
 
 function onEachFeature(feature, layer) {
@@ -108,7 +108,7 @@ function onEachFeature(feature, layer) {
     layer.on({
         click: whenClicked
     });
-}
+};
 
 L.geoJson(geodata {
     onEachFeature: onEachFeature

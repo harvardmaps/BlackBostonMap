@@ -69,7 +69,7 @@ var Sanborn_1867 = L.tileLayer(
         tms: true, 
         attribution: 'Leventhal Map & Education Center'
       }
-  )
+  );
 
 var Beers_1874 = L.tileLayer(
   'https://s3.us-east-2.wasabisys.com/urbanatlases/39999059015410/tiles/{z}/{x}/{-y}.png', {

@@ -1,4 +1,4 @@
-var mymap = L.map('mymap', {center: [42.3612, -71.0669], zoom: 15,});
+var mymap = L.map('map', {center: [42.3612, -71.0669], zoom: 15,});
 
 var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
 	maxZoom: 17,

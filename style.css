@@ -1,5 +1,32 @@
-#map {
-    height: 100%;
-    width: 100%;
+/* WHOLE MAP */
 
+/* html body takes up whole screen */
+html, body{
+  height: 100%;
+  width: 100%;
+}
+
+/* map occupies entire screen */
+#map{
+  font-family:"Trueno",sans-serif;
+	height:100%;
+	width:100%;
+	bottom:0;
+}
+
+/* browser adds margin by default, and that adds a scrollbar ... no good */
+body {
+  font-family:"Trueno",sans-serif;
+  margin: 0;
+  overflow:hidden;
+  overflow-x:hidden;
+}
+
+#sidebar{
+  font-family:"Trueno",sans-serif;
+  position:absolute;
+  width: 30%;
+  height:100%;
+  background-color: #FFFAFA;
+  z-index: 999999;
 }

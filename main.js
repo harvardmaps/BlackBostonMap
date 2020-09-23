@@ -112,4 +112,4 @@ function onEachFeature(feature, layer) {
 
 L.geoJson(geodata {
     onEachFeature: onEachFeature
-}).addTo(map); 
+}).addTo(mymap); 

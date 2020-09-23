@@ -9,3 +9,29 @@ var Stadia_OSMBright = L.tileLayer('https://tiles.stadiamaps.com/tiles/osm_brigh
 	maxZoom: 20,
 	attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
 });
+
+var Sanborn_1867 = L.tileLayer(
+	'https://s3.us-east-2.wasabisys.com/urbanatlases/39999059012052/tiles/{z}/{x}/{-y}.png', {
+		tms: true, 
+		attribution: 'Leventhal Map & Education Center'
+	}
+  );
+  
+  var Beers_1874 = L.tileLayer(
+	'https://s3.us-east-2.wasabisys.com/urbanatlases/39999059015410/tiles/{z}/{x}/{-y}.png', {
+	  tms: true, 
+	  attribution: 'Leventhal Map & Education Center'
+	}
+  );
+  
+  var basemaps = {
+	"Stamen Watercolor" : Stadia_OSMBright,
+	"Open Topo Map" : OpenTopoMap
+  };
+  
+  var overlays = {
+	"Beers, 1874" : Beers_1874,
+	"Sanborn, 1867" : Sanborn_1867
+  };
+  
+  L.control.layers(basemaps, overlays).addTo(mymap);

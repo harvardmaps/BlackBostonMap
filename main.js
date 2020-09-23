@@ -46,17 +46,17 @@ var mymap = L.map('map', {
 			}
     }
   ]
-}
+};
 
-L.geoJson(geodata).addTo(mymap);
+  L.geoJson(geodata).addTo(mymap);
 
 
-var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+  var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
      maxZoom: 17,
      attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
   }).addTo(mymap);
   
-var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
+  var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
      attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
      subdomains: 'abcd',
      minZoom: 1,
@@ -64,31 +64,31 @@ var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/w
      ext: 'jpg'
   });
   
-var Sanborn_1867 = L.tileLayer(
+  var Sanborn_1867 = L.tileLayer(
     'https://s3.us-east-2.wasabisys.com/urbanatlases/39999059012052/tiles/{z}/{x}/{-y}.png', {
         tms: true, 
         attribution: 'Leventhal Map & Education Center'
       }
   );
 
-var Beers_1874 = L.tileLayer(
+  var Beers_1874 = L.tileLayer(
   'https://s3.us-east-2.wasabisys.com/urbanatlases/39999059015410/tiles/{z}/{x}/{-y}.png', {
 	  tms: true, 
 		attribution: 'Leventhal Map & Education Center'
 	}
-);
+  );
 
-var basemaps = {
+  var basemaps = {
   "Stamen Watercolor" : Stamen_Watercolor,
   "Open Topo Map" : OpenTopoMap
-};
+  };
 
-var overlays = {
+  var overlays = {
 	"Beers, 1874" : Beers_1874,
 	"Sanborn, 1867" : Sanborn_1867
 	};
 
-L.control.layers(basemaps, overlays).addTo(mymap);
+  L.control.layers(basemaps, overlays).addTo(mymap);
 
 /*
 var latlng = (42.3554, -71.0762)

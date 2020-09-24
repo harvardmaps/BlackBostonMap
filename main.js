@@ -5,9 +5,18 @@ var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png'
 	attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
 }).addTo(mymap);
 
-var Stadia_OSMBright = L.tileLayer('https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png', {
+var Stamen_TonerLite = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.{ext}', {
+	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+	subdomains: 'abcd',
+	minZoom: 0,
 	maxZoom: 20,
-	attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+	ext: 'png'
+});
+
+var Wikimedia = L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png', {
+	attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
+	minZoom: 1,
+	maxZoom: 19
 });
 
 var Sanborn_1867 = L.tileLayer(
@@ -25,8 +34,9 @@ var Beers_1874 = L.tileLayer(
 );
   
 var basemaps = {
-	"OSM Bright" : Stadia_OSMBright,
-	"Open Topo Map" : OpenTopoMap
+	"Stamen Light" : Stamen_TonerLite,
+	"Open Topo Map" : OpenTopoMap,
+	"Wikimedia" : Wikimedia
 };
   
 var overlays = {
@@ -102,16 +112,16 @@ function whenClicked(e) {
   // e = event
   var feature = e.target;
   $( "#sidebar-content" ).html("<h2>Updated sidebar with content</h2><br><strong>Name: " 
-  + feature.properties.NAME_2 + " " + feature.properties.NAME_1 
-  + "</strong><br><strong>Address: " + feature.properties.ORIG_ADDRESS + "</strong>");
+  + feature.feature.properties.NAME_2 + " " + feature.feature.properties.NAME_1 
+  + "</strong><br><strong>Address: " + feature.feature.properties.ORIG_ADDRESS + "</strong>");
 };
 
-function onEachFeature(feature, layer) {
+function onEach(feature, layer) {
     layer.on({
         click: whenClicked
 		});
 };
 
 L.geoJson(geodata, {
-    onEachFeature: onEachFeature
+    onEachFeature: onEach
 }).addTo(mymap);

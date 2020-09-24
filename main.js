@@ -25,7 +25,7 @@ var Beers_1874 = L.tileLayer(
 );
   
 var basemaps = {
-	"Stamen Watercolor" : Stadia_OSMBright,
+	"OSM Bright" : Stadia_OSMBright,
 	"Open Topo Map" : OpenTopoMap
 };
   
@@ -81,15 +81,15 @@ var geodata =  {
 	]
 };
 
-L.geoJson(geodata).addTo(mymap);
-
 function removeFeatures() {
 	$( "#sidebar-content" ).html("<h2>Introduction to the site</h2> <p>Some ideas here</p>");
 };
 
 /*
-function addFeature() {
-	$( "#sidebar-content" ).html("<h2>Updated sidebar for popup content</h2><br><strong>Name: </strong><br><strong>Address: </strong>");
+function buildLabel(feature) {
+	$( "#sidebar-content" ).html("<h2>Updated sidebar with content</h2><br><strong>Name: " 
+	+ feature.properties.NAME_2 + " " + feature.properties.NAME_1 
+	+ "</strong><br><strong>Address: " + feature.properties.ORIG_ADDRESS + "</strong>");
 };
 */
 
@@ -97,20 +97,21 @@ function addFeature() {
 $( "#reset-button" ).click(function() {
 	removeFeatures();
 });
-/*
+
 function whenClicked(e) {
   // e = event
   var feature = e.target;
-  $( "#sidebar-content" ).html("<h2>Updated sidebar for popup content</h2><br><strong>Name: " + feature.properties.NAME_2 + " " + feature.properties.NAME_1 + "</strong><br><strong>Address: " + feature.feature.properties.ORIG_ADDRESS + "</strong>");
+  $( "#sidebar-content" ).html("<h2>Updated sidebar with content</h2><br><strong>Name: " 
+  + feature.properties.NAME_2 + " " + feature.properties.NAME_1 
+  + "</strong><br><strong>Address: " + feature.properties.ORIG_ADDRESS + "</strong>");
 };
 
 function onEachFeature(feature, layer) {
-    //bind click
     layer.on({
         click: whenClicked
-    });
+		});
 };
 
 L.geoJson(geodata, {
     onEachFeature: onEachFeature
-}).addTo(mymap); */
+}).addTo(mymap);

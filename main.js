@@ -122,6 +122,18 @@ function onEach(feature, layer) {
 		});
 };
 
+var geojsonMarkerOptions = {
+	radius : 8,
+	fillColor : "#0000ff",
+	color : "000",
+	weight : 1, 
+	opacity : 1,
+	fillOpacity : .8
+};
+
 L.geoJson(geodata, {
-    onEachFeature: onEach
+	onEachFeature: onEach,
+	pointToLayer : function (feature, latlng) {
+		return L.circleMarker(latlng, geojsonMarkerOptions);
+	} 
 }).addTo(mymap);

@@ -118,7 +118,7 @@ function whenClicked(e) {
 
 function onEach(feature, layer) {
     layer.on({
-        click: whenClicked
+		click: whenClicked
 		});
 };
 

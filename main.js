@@ -127,8 +127,7 @@ function whenReturned(e) {
 
 function onEach(feature, layer) {
     layer.on({
-		click: whenClicked,
-		KeyboardEvent: whenReturned
+		click: whenClicked
 		});
 };
 

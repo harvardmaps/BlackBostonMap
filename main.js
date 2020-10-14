@@ -123,7 +123,7 @@ function onEach(feature, layer) {
 };
 
 var geojsonMarkerOptions = {
-	radius : 8,
+	radius : 4,
 	fillColor : "#0000ff",
 	color : "000",
 	weight : 1, 

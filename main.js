@@ -139,6 +139,6 @@ marker_2.bindPopup("<b>Hello</b>");
 L.geoJson(geodata, {
 	onEachFeature: onEach,
 	pointToLayer : function (feature, latlng) {
-		return L.Marker(latlng);
+		return L.marker(latlng);
 	} 
 }).addTo(mymap);

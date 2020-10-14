@@ -131,6 +131,11 @@ var geojsonMarkerOptions = {
 	fillOpacity : .8
 };
 
+var marker = L.marker([-71.069, 42.36]).addTo(mymap);
+var marker_2 = L.marker([-71.061, 42.351]).addTo(mymap);
+
+marker_2.bindPopup("<b>Hello</b>");
+
 L.geoJson(geodata, {
 	onEachFeature: onEach,
 	pointToLayer : function (feature, latlng) {

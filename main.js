@@ -139,6 +139,6 @@ marker_2.bindPopup("<b>Hello</b>");
 L.geoJson(geodata, {
 	onEachFeature: onEach,
 	pointToLayer : function (feature, latlng) {
-		return L.circleMarker(latlng, geojsonMarkerOptions);
+		return L.Marker(latlng);
 	} 
 }).addTo(mymap);

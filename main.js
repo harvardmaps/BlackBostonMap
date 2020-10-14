@@ -116,11 +116,21 @@ function whenClicked(e) {
   + "</strong><br><strong>Address: " + feature.feature.properties.ORIG_ADDRESS + "</strong>");
 };
 
+function whenReturned(e) {
+	if(e.originalEvent.keyCode === 13) {
+		var feature = e.target;
+		$( "#sidebar-content" ).html("<h2>Updated sidebar with content</h2><br><strong>Name: " 
+		+ feature.feature.properties.NAME_2 + " " + feature.feature.properties.NAME_1 
+		+ "</strong><br><strong>Address: " + feature.feature.properties.ORIG_ADDRESS + "</strong>");
+	};
+};
+
 function onEach(feature, layer) {
     layer.on({
-		click: whenClicked
+		focus: whenClicked
 		});
 };
+
 
 var geojsonMarkerOptions = {
 	radius : 4,

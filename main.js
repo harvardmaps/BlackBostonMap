@@ -118,10 +118,7 @@ function whenClicked(e) {
 
 function whenReturned(e) {
 	if(e.originalEvent.keyCode === 13) {
-		var feature = e.target;
-		$( "#sidebar-content" ).html("<h2>Updated sidebar with content</h2><br><strong>Name: " 
-		+ feature.feature.properties.NAME_2 + " " + feature.feature.properties.NAME_1 
-		+ "</strong><br><strong>Address: " + feature.feature.properties.ORIG_ADDRESS + "</strong>");
+		whenClicked(e);
 	};
 };
 

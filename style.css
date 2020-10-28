@@ -37,3 +37,10 @@ body {
   top: 0;
   left: 10px;
 }
+
+#fakePopUp{
+  position:absolute;
+  bottom:0;
+  right:0
+  z-index: 999999;
+}

@@ -128,6 +128,21 @@ function onEach(feature, layer) {
 		});
 };
 
+//function for popup
+function onEachPopup(feature, layer){
+	// I have this stuff commented out because your data is ... XML? 
+	// But if the features were formatted as GeoJSON, you could use this syntax to grab properties
+	var sidebarPopup = L.popup({className: 'fakePopUp'});
+	
+	name2 = feature.properties.NAME_2
+	name1 = feature.properties.NAME_1 
+	address = feature.properties.ORIG_ADDRESS 
+	content = ("<h2>Updated sidebar with content</h2><br><strong>Name: " 
+	+ name2 + " " + name1 + "</strong><br><strong>Address: " + address + "</strong>")
+	//content = "<strong>Name: </strong>" + name + "<br>" + "<strong>Address: </strong>" + address + "<br>" + "<strong>School type: </strong>" + type;
+	sidebarPopup.setPopupContent(content)
+	layer.bindPopup(sidebarPopup);
+};
 
 var geojsonMarkerOptions = {
 	radius : 4,
@@ -144,7 +159,7 @@ var marker_2 = L.marker([42.35, -71.05]).addTo(mymap);
 marker_2.bindPopup("<b>Hello</b>");
 
 L.geoJson(geodata, {
-	onEachFeature: onEach,
+	onEachFeature: onEachPopup,
 	pointToLayer : function (feature, latlng) {
 		return L.marker(latlng);
 	} 

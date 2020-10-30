@@ -159,7 +159,7 @@ var marker_2 = L.marker([42.35, -71.05]).addTo(mymap);
 marker_2.bindPopup("<b>Hello</b>");
 
 L.geoJson(geodata, {
-	onEachFeature: onEachPopup,
+	onEachFeature: onEach,
 	pointToLayer : function (feature, latlng) {
 		return L.marker(latlng);
 	} 

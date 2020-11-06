@@ -101,6 +101,10 @@ var geodata =  {
 	]
 };
 
+function removeFeatures() {
+	
+};
+
 /*
 function buildLabel(feature) {
 	$( "#sidebar-content" ).html("<h2>Updated sidebar with content</h2><br><strong>Name: " 
@@ -110,9 +114,11 @@ function buildLabel(feature) {
 */
 
 // Use $( "elementID") and the jQuery click listener method to remove on the remove button
-$( "#reset-button" ).click(sidebar.setContent('<h1>Sidebar for popup content</h1>' +
-'<div id="controls"><button id="reset-button">Reset</button></div>' +
-'<h2>Click on a place to learn more</h2>'));
+$( "#reset-button" ).click(function() {
+	sidebar.setContent('<h1>Sidebar for popup content</h1>' + 
+  '<div id="controls"><button id="reset-button">Reset</button></div>' + 
+  '<h2>Click on a place to learn more</h2>')
+});
 
 function whenClicked(e) {
   // e = event

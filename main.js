@@ -121,9 +121,11 @@ $( "#reset-button" ).click(function() {
 function whenClicked(e) {
   // e = event
   var feature = e.target;
-  $("#sidebar div.content").html("<h2>Information about this place</h2><br><strong>Name: " 
-  + feature.feature.properties.NAME_2 + " " + feature.feature.properties.NAME_1 
-  + "</strong><br><strong>Address: " + feature.feature.properties.ORIG_ADDRESS + "</strong>");
+  sidebar.setContent('<h1>Sidebar for popup content</h1>' + 
+  '<div id="controls"><button id="reset-button">Reset</button></div>' + 
+  '<h2>Information about this place</h2><br><strong>Name: ' + 
+  feature.feature.properties.NAME_2 + " " + feature.feature.properties.NAME_1 +
+  "</strong><br><strong>Address: " + feature.feature.properties.ORIG_ADDRESS + "</strong>");
 };
 
 function whenReturned(e) {

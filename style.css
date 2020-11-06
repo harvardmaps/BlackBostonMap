@@ -20,18 +20,15 @@ body {
   overflow-x:hidden;
 }
 
-#sidebar{
-  position:absolute;
-  width: 30%;
-  height:90%;
-  background-color: #FFFAFA;
-  z-index: 999999;
+body > #sidebar {
+  display: none;
 }
-
-#sidebar-content{
+/*
+#content{
   margin-left: 10%;
   margin-right: 10%;
 }
+*/
 
 #controls{
   top: 0;

@@ -15,6 +15,7 @@
 
 		<!-- grabs Leaflet's stylesheet --> 
 		<link rel="stylesheet" href="lib/leaflet/leaflet.css">
+		<link rel="stylesheet" href="src/L.Control.Sidebar.css" />
 
 		<!-- grabs jQuery's stylesheet --> 
 		<link href="lib/jquery-ui/jquery-ui.css" rel="stylesheet"> 
@@ -24,28 +25,25 @@
 
 		<!-- points to our own custom style sheet so we can make things look snazzy --> 
 		<link href="style.css" rel="stylesheet">
+		
   </head>
 
   <body>
 	
 	<!-- container for the map, with custom id name "#map" --> 
 	<div id = "sidebar">
-      <div id="controls">   
-         <button id="reset-button">Reset</button>
-      </div>
-      <div id = "sidebar-content">   
-         <h2>Sidebar for popup content</h2>
-		   <p>One idea is to populate the data from the popups over here</p>
-		   <li>Data data data</li>
-		   <li>Data data data</li>
-         <li>Data data data</li>
-      </div>
+		<h1>Sidebar for popup content</h1>
+		<div id="controls">   
+        <button id="reset-button">Reset</button>
+      	</div>
+		<div id="content"><h2>Click on a place to learn more</h2></div>
 	</div>
-   <div role=application id="mymap" tabindex="0"></div>
+   <div role=application id="mymap"></div>
 	<!-- container for the top banner, with custom id name "#banner" --> 
 	<div id="banner"></div>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.js"integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
+	<script type= "text/javascript" src="src/L.Control.Sidebar.js"></script>
 	<script type= "text/javascript" src = "main.js"> </script>
 
 </body>

@@ -1,5 +1,15 @@
 var mymap = L.map('mymap', {center: [42.3612, -71.0669], zoom: 15,});
 
+var sidebar = L.control.sidebar('sidebar', {
+	closeButton: false,
+	position: 'left'
+});
+mymap.addControl(sidebar);
+
+setTimeout(function () {
+	sidebar.show();
+}, 500);
+
 var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
 	maxZoom: 17,
 	attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
@@ -92,7 +102,7 @@ var geodata =  {
 };
 
 function removeFeatures() {
-	$( "#sidebar-content" ).html("<h2>Introduction to the site</h2> <p>Some ideas here</p>");
+	$( "#sidebar div.content" ).html("<h2>Click on a place to learn more</h2>");
 };
 
 /*
@@ -111,7 +121,7 @@ $( "#reset-button" ).click(function() {
 function whenClicked(e) {
   // e = event
   var feature = e.target;
-  $( "#sidebar-content" ).html("<h2>Updated sidebar with content</h2><br><strong>Name: " 
+  $("#sidebar div.content").html("<h2>Information about this place</h2><br><strong>Name: " 
   + feature.feature.properties.NAME_2 + " " + feature.feature.properties.NAME_1 
   + "</strong><br><strong>Address: " + feature.feature.properties.ORIG_ADDRESS + "</strong>");
 };

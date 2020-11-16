@@ -137,6 +137,12 @@ function whenClicked(e) {
   '<h2>Information about this place</h2><br><strong>Name: ' + 
   feature.feature.properties.NAME_2 + " " + feature.feature.properties.NAME_1 +
   "</strong><br><strong>Address: " + feature.feature.properties.ORIG_ADDRESS + "</strong>");
+
+  $(document).on('click', '#reset-button', function(){
+	sidebar.setContent('<h1>Sidebar for popup content</h1>' + 
+	'<div id="controls"><button id="reset-button">Reset</button></div>' +
+  	'<h2>Click on a place to learn more</h2>')
+});
 };
 
 function whenReturned(e) {

@@ -123,7 +123,7 @@ $( "#reset-button" ).click(function() {
 });
 */
 
-$(document).on('click', '#reset-button', function(){
+$(document).on('click', 'reset-button', function(){
 	sidebar.setContent('<h1>Sidebar for popup content</h1>' + 
 	'<div id="controls"><button id="reset-button">Reset</button></div>' +
   	'<h2>Click on a place to learn more</h2>')
@@ -138,7 +138,7 @@ function whenClicked(e) {
   feature.feature.properties.NAME_2 + " " + feature.feature.properties.NAME_1 +
   "</strong><br><strong>Address: " + feature.feature.properties.ORIG_ADDRESS + "</strong>");
 
-  $(document).on('click', '#reset-button', function(){
+  $(document).on('click', 'reset-button', function(){
 	sidebar.setContent('<h1>Sidebar for popup content</h1>' + 
 	'<div id="controls"><button id="reset-button">Reset</button></div>' +
   	'<h2>Click on a place to learn more</h2>')

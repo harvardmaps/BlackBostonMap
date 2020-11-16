@@ -6,19 +6,6 @@ html, body{
   width: 100%;
 }
 
-.topnav{
-  background-color: #333;
-  overflow: hidden;
-}
-.topnav a {
-  float:left;
-  text-align: center;
-  padding: 14px 16px;
-}
-.topnav button {
-  float:left;
-}
-
 /* map occupies entire screen */
 #mymap{
 	height:100%;
@@ -33,6 +20,45 @@ body {
   overflow-x:hidden;
 }
 
+.navbar{
+	position:absolute;
+	right:0;
+	width:100%;
+}
+
+/* styles all the navbar links */
+a.nav-link{
+	color:white !important;	
+	font-family: 'Nunito', sans-serif !important;
+}
+
+/* makes navbar appear on atop the map, positions it, and sets desired background color */
+.navbar.navbar-expand-lg.navbar-light.bg-light{
+	z-index:9999999 !important;
+	background-color:rgba(33,69,31,1)!important;
+	top:0 !important;
+}
+
+/* toggle button styling  */
+/* overrides Bootstrap default for button styling */
+.btn-info{
+	background-color:rgba(0,0,0,0);
+	border-color: rgba(0,0,0,0);
+}
+
+/* toggle button styling  */
+/* overrides Bootstrap default for button styling */
+.btn-info:hover{
+	background-color:rgba(0,0,0,0);
+	border: none !important;
+}
+
+/* toggle button styling  */
+/* overrides Bootstrap default for button styling */
+.btn:focus,.btn:active {
+   outline: none !important;
+   box-shadow: none;
+}
 body > #sidebar {
   display: none;
 }

@@ -10,6 +10,15 @@ setTimeout(function () {
 	sidebar.show();
 }, 500);
 
+var homeButton = L.control({position: 'topleft'});
+
+homeButton.onAdd = function(map) {
+	this._div = L.DomUntil.create('div', 'home-button');
+	return this._div;
+};
+
+homeButton.addTo(mymap);
+
 var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
 	maxZoom: 17,
 	attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
@@ -101,11 +110,12 @@ var geodata =  {
 	]
 };
 
+/*
 function removeFeatures() {
 	
 };
 
-/*
+
 function buildLabel(feature) {
 	$( "#sidebar-content" ).html("<h2>Updated sidebar with content</h2><br><strong>Name: " 
 	+ feature.properties.NAME_2 + " " + feature.properties.NAME_1 
@@ -121,28 +131,26 @@ $( "#reset-button" ).click(function() {
   dynamicButton + 
   '<h2>Click on a place to learn more</h2>')
 });
-*/
+
 
 $(document).on('click', 'reset-button', function(){
 	sidebar.setContent('<h1>Sidebar for popup content</h1>' + 
-	'<div id="controls"><button id="reset-button">Reset</button></div>' +
   	'<h2>Click on a place to learn more</h2>')
+});
+*/
+
+$( "#reset-button" ).click(function() {
+	sidebar.setContent('<h1>Sidebar for popup content</h1>' + 
+	'<h2>Click on a place to learn more</h2>');
 });
 
 function whenClicked(e) {
   // e = event
   var feature = e.target;
   sidebar.setContent('<h1>Sidebar for popup content</h1>' + 
-  '<div id="controls"><button id="reset-button">Reset</button></div>' +
   '<h2>Information about this place</h2><br><strong>Name: ' + 
   feature.feature.properties.NAME_2 + " " + feature.feature.properties.NAME_1 +
   "</strong><br><strong>Address: " + feature.feature.properties.ORIG_ADDRESS + "</strong>");
-
-  $(document).on('click', 'reset-button', function(){
-	sidebar.setContent('<h1>Sidebar for popup content</h1>' + 
-	'<div id="controls"><button id="reset-button">Reset</button></div>' +
-  	'<h2>Click on a place to learn more</h2>')
-});
 };
 
 function whenReturned(e) {

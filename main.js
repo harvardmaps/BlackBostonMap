@@ -113,10 +113,12 @@ function buildLabel(feature) {
 };
 */
 
+var dynamicButton = jQuery('#controls').clone(true)
+
 // Use $( "elementID") and the jQuery click listener method to remove on the remove button
-$(document).on('click', '#controls .btn12', function()  {
+$( "#reset-button" ).click(function() {
 	sidebar.setContent('<h1>Sidebar for popup content</h1>' + 
-  '<div id="controls"><button id="reset-button">Reset</button></div>' + 
+  dynamicButton + 
   '<h2>Click on a place to learn more</h2>')
 });
 
@@ -124,7 +126,7 @@ function whenClicked(e) {
   // e = event
   var feature = e.target;
   sidebar.setContent('<h1>Sidebar for popup content</h1>' + 
-  '<div id="controls"><button id="reset-button">Reset</button></div>' + 
+  dynamicButton + 
   '<h2>Information about this place</h2><br><strong>Name: ' + 
   feature.feature.properties.NAME_2 + " " + feature.feature.properties.NAME_1 +
   "</strong><br><strong>Address: " + feature.feature.properties.ORIG_ADDRESS + "</strong>");

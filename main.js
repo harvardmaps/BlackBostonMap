@@ -114,7 +114,7 @@ function buildLabel(feature) {
 */
 
 // Use $( "elementID") and the jQuery click listener method to remove on the remove button
-$( "#reset-button" ).click(function() {
+$( "#reset-button" ).prev("a.ui-btn").unbind().click( function()  {
 	sidebar.setContent('<h1>Sidebar for popup content</h1>' + 
   '<div id="controls"><button id="reset-button">Reset</button></div>' + 
   '<h2>Click on a place to learn more</h2>')

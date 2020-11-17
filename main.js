@@ -130,7 +130,7 @@ $(document).on('click', 'reset-button', function(){
 });
 */
 
-$( "#reset-button" ).click(function() {
+$( "#Home" ).click(function() {
 	sidebar.setContent('<h1>Sidebar for popup content</h1>' + 
 	'<h2>Click on a place to learn more</h2>');
 });
